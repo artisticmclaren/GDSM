@@ -56,8 +56,9 @@ def colorstat():
             isBlending="false"
         print(f"== Data for color channel {prettify_colorid(int(channel))} ==")
         rgb = f"{values[values.index("1")+1]}, {values[values.index("2")+1]}, {values[values.index("3")+1]}"
-        print(f"\nRGB: {rgb}\nOpacity: {values[values.index("7")+1]}\nIsBlending: {isBlending}\n")
+        torgb = f"{values[values.index("11")+1]}, {values[values.index("12")+1]},{values[values.index("13")+1]}"
+        print(f"\nFrom RGB: {rgb}\nTo RGB: {torgb}\nOpacity: {values[values.index("7")+1]}\nIs Blending: {isBlending}\n")
 
 if __name__=="__main__":
-    print("colorstat v1.0.0\n")
+    print("colorstat v1.0.1\n")
     colorstat()

@@ -87,7 +87,7 @@ def FullDecrypt():
         print(f"Decrypting \"{levels[o]}\"")
         encryptedld="H4sIAAAAAAAA"+decrypted_save.split("<s>H4sIAAAAAAAA")[1+o].split("</s>")[0]
         decryptedld=Decrypt(encryptedld)
-        f = open(f"levels/{levels[o]}.txt","wb")
+        f = open(f"levels/{levels[o]}","wb")
         f.write(decryptedld)
         print(f"Decrypted \"{levels[o]}\"")
         exit()
@@ -130,7 +130,7 @@ def EncryptIntoSave():
     e.close()
 
 print("""
-gdsavemgr  v1.0.0
+gdsavemgr  v1.0.1
 
 [1] Decrypt levels into 'levels' directory
 [2] Decrypt .gmd file
