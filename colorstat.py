@@ -85,8 +85,7 @@ def colorstat():
             data+=f"\nCopying: {prettify_colorid(copiedColorID)}"
         data+=f"\nOpacity: {opacity}\nIs Blending: {isBlending}\n"
         print(data)
-        time.sleep()
-        quit()
+    quit()
 
 if __name__=="__main__":
     print("colorstat v1.1.0\n")
