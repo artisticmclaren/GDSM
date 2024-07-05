@@ -33,8 +33,8 @@ def FullDecrypt():
     try: os.remove("CCLocalLevels.dat.txt")
     except: pass
     print("Decrypting...")
-
-    fPath = open("path.txt").read()
+    read = open("path.txt").readline()
+    fPath = read.replace("\n","")
     res = Xor(fPath+saves[1],11)
     fin = Decrypt(res)
 
