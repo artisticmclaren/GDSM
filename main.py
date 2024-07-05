@@ -72,7 +72,7 @@ def FullDecrypt():
         else:
             id+=1
     ospatch.clear("ospatch.clear")
-    os.remove("tmp/CCLocalLevels.dat.txt")
+    #os.remove("tmp/CCLocalLevels.dat.txt")
     print(f"Levels: {levelCount}")
     print("""
     What would you like to do with these levels?
