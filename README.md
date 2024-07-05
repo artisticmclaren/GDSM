@@ -6,6 +6,11 @@ Install python from [pythons website](https://python.org/), or if you are on Lin
 
 # How to use this
 
+### MAKE SURE YOU PUT THE FULL PATH TO YOUR GEOMETRY DASH APPDATA FOLDER IN PATH.TXT
+
+## main.py
+This compiles all the python scripts in this readme into one file.
+
 ## levelstats.py
 Run this file and enter a level name that is in the 'levels' directory to get statistics on it and specific objects. *object count is slightly innaccurate, dont know why.
 ## creategmd.py
