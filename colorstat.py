@@ -1,4 +1,4 @@
-import os
+import os,ospatch
 
 def prettify_colorid(id): # proper yandere dev code >:)
     if id==1000:
@@ -24,7 +24,7 @@ def prettify_colorid(id): # proper yandere dev code >:)
     else:
         return id
 
-os.system("clear")
+ospatch.clear("clear")
 
 def itob(i:int): 
     if i==0: return "true" 
@@ -33,11 +33,11 @@ def itob(i:int):
 def colorstat():
     file = input("decrypted level file >")
     try:
-        open(file)
+        open(f"levels/{file}")
     except:
         print("File not found.")
         colorstat()
-    f = open(file,"r")
+    f = open(f"levels/{file}","r")
     data = f.read().split(",")
     try:
         data.index("kS38")+1
@@ -45,6 +45,8 @@ def colorstat():
         print("Pre 2.0 levels are not supported!")
         colorstat()
     colorstring = data[data.index("kS38")+1].split("|")
+    ospatch.clear()
+    print("=== colors ===\n")
     for color in colorstring:
         if (color==""): continue
         values = color.split("_")
@@ -58,8 +60,6 @@ def colorstat():
         rgb = f"{values[values.index("1")+1]},{values[values.index("2")+1]},{values[values.index("3")+1]}"
         rgbValues = rgb.split(",")
         opacity = values[values.index("7")+1]
-        torgb = f"{values[values.index("11")+1]},{values[values.index("12")+1]},{values[values.index("13")+1]}"
-        toRgbValues = torgb.split(",")
         copied=False
         copiedColorID=0
         try: 

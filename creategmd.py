@@ -1,6 +1,6 @@
-import base64,zlib,os,time
+import base64,zlib,os,time,ospatch
 
-os.system("clear")
+ospatch.clear("clear")
 
 def Xor(path,key):
     fr = open(path,'rb')

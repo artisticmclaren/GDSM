@@ -1,6 +1,6 @@
-import base64,zlib,os,time,levelstats,creategmd,colorstat
-os.system("clear")
-
+import base64,zlib,os,ospatch,time,levelstats,creategmd,colorstat
+ospatch.clear("ospatch.clear")
+#         this option is decrypted, do not try to modify this file to load CCGameManager.dat
 saves = ['CCGameManager.dat','CCLocalLevels.dat']
 
 decrypted_save=""   
@@ -29,11 +29,12 @@ def Encrypt(data):
 def FullDecrypt():
     for level in os.listdir("levels"):
         os.remove(f"levels/{level}")
-    os.system("clear")
+    ospatch.clear("ospatch.clear")
     try: os.remove("CCLocalLevels.dat.txt")
     except: pass
     print("Decrypting...")
-    fPath = "/home/elijah/.local/share/Steam/steamapps/compatdata/322170/pfx/drive_c/users/steamuser/AppData/Local/GeometryDash/"
+
+    fPath = open("path.txt").read()
     res = Xor(fPath+saves[1],11)
     fin = Decrypt(res)
 
@@ -45,7 +46,7 @@ def FullDecrypt():
     s = open("tmp/CCLocalLevels.dat.txt","r")
     decrypted_save = s.read()
     time.sleep(2)
-    os.system("clear")
+    ospatch.clear("ospatch.clear")
 
     levels=[]
 
@@ -55,7 +56,7 @@ def FullDecrypt():
 
     print("Finding levels...")
     time.sleep(2)
-    os.system("clear")
+    ospatch.clear("ospatch.clear")
     while not finished:
         clevel=""
         try: clevel = getLevelName(decrypted_save.split("<k>k2</k><s>")[id],4)
@@ -70,7 +71,7 @@ def FullDecrypt():
             levels.append(clevel)
         else:
             id+=1
-    os.system("clear")
+    ospatch.clear("ospatch.clear")
     os.remove("tmp/CCLocalLevels.dat.txt")
     print(f"Levels: {levelCount}")
     print("""
@@ -81,7 +82,7 @@ def FullDecrypt():
           """)
     a=input(">")
     if (a.lower()=="1"):
-        os.system("clear")
+        ospatch.clear("ospatch.clear")
         l = input("level number (order in list) >")
         o = int(l)-1
         print(f"Decrypting \"{levels[o]}\"")
@@ -92,7 +93,7 @@ def FullDecrypt():
         print(f"Decrypted \"{levels[o]}\"")
         exit()
     else:
-        os.system("clear")
+        ospatch.clear("ospatch.clear")
         pass
     
     
@@ -103,7 +104,7 @@ def FullDecrypt():
         decryptedld=Decrypt(encryptedld)
         f = open(f"levels/{lname.replace(" ","")}","wb")
         f.write(decryptedld)
-    os.system("clear")
+    ospatch.clear("ospatch.clear")
     print("""
     What would you like to do with your decrypted levels?
     [1] Get level stats of specific level
@@ -113,7 +114,7 @@ def FullDecrypt():
         """)
     a = input("> ")
     if a=="1":
-        os.system("clear")
+        ospatch.clear("ospatch.clear")
         print("[1] general level stats\n[2] level color stats")
         a = input(">")
         if a=="1": levelstats.levelStats()
@@ -124,7 +125,7 @@ def FullDecrypt():
         quit()
 
 def EncryptIntoSave():
-    os.system("clear")
+    ospatch.clear("ospatch.clear")
     e = open("encrypt.txt","r")
     print(Encrypt(e.read()))
     e.close()

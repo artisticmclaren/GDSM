@@ -1,5 +1,5 @@
-import base64,zlib,os,time,shutil
-os.system("clear")
+import base64,zlib,os,time,shutil,ospatch
+ospatch.clear("clear")
 
 def getValue(lsobj:str,id:int): return lsobj[lsobj.index(f"kA{id}")+1]
 def itob(i:int): 
@@ -8,7 +8,7 @@ def itob(i:int):
 
 def levelStats():
     done=False
-    os.system("clear")
+    ospatch.clear("clear")
     name = input("level name >")
     f = open(f"levels/{name}","r")
 
@@ -19,7 +19,7 @@ def levelStats():
             continue
         objects.append(d)
     levelStartObject = objects[0].split(",")
-    os.system("clear")
+    ospatch.clear("clear")
     version="22"
     try: getValue(levelStartObject,22)
     except: version="21"
