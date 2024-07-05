@@ -91,6 +91,7 @@ def FullDecrypt():
         f = open(f"levels/{levels[o]}","wb")
         f.write(decryptedld)
         print(f"Decrypted \"{levels[o]}\"")
+        time.sleep()
         exit()
     else:
         ospatch.clear("ospatch.clear")

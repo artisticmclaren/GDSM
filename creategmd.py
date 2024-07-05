@@ -27,6 +27,8 @@ def create_gmd():
     f = open(f"{name}.gmd","w")
     f.write(xml)
     print(f"Created {name}.gmd in working directory.")
+    time.sleep()
+    quit()
 
 if __name__=="__main__":
     print("gmdcreate v1.0.0\n")

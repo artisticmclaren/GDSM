@@ -9,7 +9,7 @@ def itob(i:int):
 def levelStats():
     done=False
     ospatch.clear("clear")
-    name = input("level name >")
+    name = input("level name (no spaces)>")
     f = open(f"levels/{name}","r")
 
     data = f.read().split(";")

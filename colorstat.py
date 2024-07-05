@@ -1,4 +1,4 @@
-import os,ospatch
+import os,ospatch,time
 
 def prettify_colorid(id): # proper yandere dev code >:)
     if id==1000:
@@ -31,7 +31,7 @@ def itob(i:int):
     else: return "false"
 
 def colorstat():
-    file = input("decrypted level file >")
+    file = input("decrypted level file (no spaces)>")
     try:
         open(f"levels/{file}")
     except:
@@ -85,6 +85,8 @@ def colorstat():
             data+=f"\nCopying: {prettify_colorid(copiedColorID)}"
         data+=f"\nOpacity: {opacity}\nIs Blending: {isBlending}\n"
         print(data)
+        time.sleep()
+        quit()
 
 if __name__=="__main__":
     print("colorstat v1.1.0\n")
