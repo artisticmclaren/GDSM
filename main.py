@@ -130,7 +130,7 @@ def EncryptIntoSave():
     e.close()
 
 print("""
-gdsavemgr  v1.0.1
+gdsavemgr  v1.1.0
 
 [1] Decrypt levels into 'levels' directory
 [2] Decrypt .gmd file

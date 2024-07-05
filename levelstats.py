@@ -53,7 +53,8 @@ def levelStats():
     """)
     
     while done==False:
-        a = input("get info from object >")
+        try: a = input("get info from object >")
+        except KeyboardInterrupt: quit()
         if (a=="exit"):
             done==True
             quit()
