@@ -1,4 +1,4 @@
-import base64,zlib,os,ospatch,time,levelstats,creategmd,colorstat
+import base64,zlib,os,ospatch,time,levelstats,creategmd,colorstat,decryptonline
 ospatch.clear("ospatch.clear")
 #         this option is decrypted, do not try to modify this file to load CCGameManager.dat
 saves = ['CCGameManager.dat','CCLocalLevels.dat']
@@ -110,7 +110,7 @@ def FullDecrypt():
     What would you like to do with your decrypted levels?
     [1] Get level stats of specific level
     [2] Create .gmd file
-    [2] Quit
+    [3] Quit
     
         """)
     a = input("> ")
@@ -136,6 +136,7 @@ gdsavemgr  v1.1.0
 
 [1] Decrypt levels into 'levels' directory
 [2] Decrypt .gmd file
+[3] Decrypt online level
 
       """)
 a = input(">")
@@ -160,4 +161,4 @@ elif (a.lower()=="2"):
     r.write(data)
     print(f"Decrypted {ln}")
 elif (a=="3"):
-    creategmd.create_gmd()
+    decryptonline.decrypt_online(int(input("id: ")))
